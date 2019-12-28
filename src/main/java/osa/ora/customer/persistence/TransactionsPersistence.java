@@ -47,7 +47,7 @@ public class TransactionsPersistence {
 
 	public Transactions[] findbyId(String id) {
                 System.out.println("Retireve bank account transactions using: " + id);
-		String queryStr = "SELECT * FROM transactions WHERE ACCOUNT_NO='" + id+"'";
+		String queryStr = "SELECT * FROM transactions WHERE ACCOUNT_NO='" + id+"' order by transaction_id desc";
 		Transactions transactions[] = this.query(queryStr);
 		return transactions;
 	}
